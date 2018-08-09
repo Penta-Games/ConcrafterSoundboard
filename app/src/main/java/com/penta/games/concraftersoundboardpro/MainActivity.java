@@ -18,6 +18,8 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.penta.games.concraftersoundboardpro.tabs.Lustiges;
 import com.penta.games.concraftersoundboardpro.tabs.Kommentare;
 import com.penta.games.concraftersoundboardpro.tabs.Sprüche;
@@ -38,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+                // Banner Ad
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         isTesting=false;
 
