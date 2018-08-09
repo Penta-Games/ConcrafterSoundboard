@@ -1,4 +1,4 @@
-package com.penta.games.concraftersoundboardpro;
+package com.greenwoods.productions.concraftersoundboard;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,9 +14,9 @@ import android.view.ViewGroup;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
-import com.penta.games.concraftersoundboardpro.tabs.Lustiges;
-import com.penta.games.concraftersoundboardpro.tabs.Kommentare;
-import com.penta.games.concraftersoundboardpro.tabs.Sprüche;
+import com.greenwoods.productions.concraftersoundboard.tabs.Lustiges;
+import com.greenwoods.productions.concraftersoundboard.tabs.Kommentare;
+import com.greenwoods.productions.concraftersoundboard.tabs.Sprüche;
 
 /**
  * Created by Ratan on 7/27/2015.

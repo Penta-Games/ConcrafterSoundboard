@@ -1,4 +1,4 @@
-package com.penta.games.concraftersoundboardpro.tabs;
+package com.greenwoods.productions.concraftersoundboard.tabs;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -29,8 +29,8 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import com.penta.games.concraftersoundboardpro.MainActivity;
-import com.penta.games.concraftersoundboardpro.R;
+import com.greenwoods.productions.concraftersoundboard.MainActivity;
+import com.greenwoods.productions.concraftersoundboard.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -39,55 +39,63 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * Created by Ratan on 7/29/2015.
+ * Created by Oclemmy on 5/10/2016 for ProgrammingWizards Channel and http://www.Camposha.com.
  */
-public class Lustiges extends Fragment {
+public class Sprüche extends Fragment{
+
     GridView myGridView;
     int position;
     View layout;
     //    File soundfile;
     File directory;
     String filename;
-    public String[] items1 ={"Ahhh!", "Alpaka", "AAAALPAKAS", "Oh maaaan", "Atemlos durch die Nacht", "Currywurst reste", "6 Diamanten", "Hey Lutz!", "Hört auf zu Bohren!", "Ich chill hier nur",
-            "Ich sterbe", "Krankesgeräusch 1", "Krankesgeräusch 2", "Krankesgeräusch 3", "Krankesgeräusch 4", "Krankesgeräusch 5", "Krankesgeräusch 6", "Krankesgeräusch 7", "Krankesgeräusch 8", "Krankesgeräusch 9",
-            "Lache 1", "Lache 2", "Lache 3", "Wollt ihr n Maoam", "Nailed it", "Ohh", "Ouh toll", "Hey Luca", "Hey Slenderman", "So viele Diamanten",
-            "Ja man!", "Woop Woop Woop Woop",
-            "Flülingslollen", "Geil", "Gemüse", "Hund", "Katze", "Hahahaha", "*Heul*",
-            "Hilde gart", "Ich box dich gleich amina", "Ich jetzt oder wer?", "Was wollt ihr von mir alter", "Lache", "Lasst doch mal n like da", "PFERD!",
-            "Oke sorry", "Va-China", "Yeah waah", "übelster hunger", "DREISSIGTAUSEND LIKES", "Das ist nh drohne die man fliegen kann", "Du geiler hengst",
-            "Halt deine scheiß fresse alter", "Samma hört ihr mir nicht richtig zu?", "OMG", "Kann das bei mir mal kommen?", "Klöten", "HHHuhahah", "Amnamnam",
-            "Nase abbeissen", "Thats a Mülleimer", "Was ist das denn", "viel zu sehr unterbewertet", "Uooooah"};
+
+    public String[] items1 ={"Ahhh stimmt", "Jo neee", "Das ist nicht wahr 1", "Das ist nicht wahr 2", "Ahh, ganz geil", "Diese Kuh..", "Bitte Fresse halten", "Freu dich nicht so", "Daumen Runter", "Heilige Schei*e",
+            "Heute abend schon was vor?", "Hey sexy Lady", "Halsschmerzen", "Houston", "Ich hab n Kill", "Ich sag dazu mal nichts", "Ich will", "Da will ich jetzt auch nicht mehr", "Muss ich dazu noch irgendwas sagen?",
+            "Nein Stop!", "Reg dich nicht auf Luca", "Risiko eingehen", "Schaut euch das an", "Haltet eure Schnauze", "Seid ihr bescheuert?", "Tiefpunkt erreicht", "Übernachten", "Verdammte Schei*e", "Ich versteh das nicht",
+            "Versteht ihr", "Vollidiot", "Wie nice", "2 Paprika",
+            "Da freuste dich nh", "Du bist ekelhaft", "Gib mir doch noch mehr", "Hat mich interessiert", "Ich bin cool", "Ich bin cool und ihr nicht", "Ich bin hammer",
+            "Kannste mir noch mehr erzählen?", "Muss ich da noch was zu sagen?", "Pretty dope huh", "Roll the outro", "Ich bin so sympathisch", "Sticker ausm Luca-Shop", "Versteh ich nicht",
+            "Warum schickt man mir sowas?", "Bei mir war garnichts", "Cool, freut mich", "Da kann man wirklich mal klatschen", "Das ist sehr geil", "Das ist so schön", "Dieser ganze Hass alter",
+            "Es macht einfach keinen sinn", "Ich kann nichtmal richtig Fahrradfahren", "Ich bin schlecht und Schei*e", "Schon hart am Arsch", "Wenn mir langweilig ist dann...", "Wunderschöne Toilette", "So viel Geld habe ich nicht",
+            "Tolle Reaktion, danke freunde", "Was läuft falsch in deinem Leben?", "What are you doing man?", "Wie dumm kann man sein?", "Wie geil war das bitte?", "Wie kann das sein?", "Wunderschöner Schädel", "Thats pretty dope"};
+
+
 
     public static int[] soundfiles ={
-    /*5*/                           R.raw.aaaaaaaa,R.raw.alpaca, R.raw.alpacas, R.raw.aman, R.raw.atemlosdurchdienacht,
-    /*5*/                           R.raw.currywurstreste, R.raw.diamanten, R.raw.heylutz, R.raw.hoeraufzubohren, R.raw.ichchillhiernur,
-    /*5*/                           R.raw.ichsterbe, R.raw.krankesgereusch1, R.raw.krankesgereusch2, R.raw.krankesgereusch3, R.raw.krankesgereusch4,
-    /*5*/                           R.raw.krankesgereusch5, R.raw.krankesgereusch6, R.raw.krankesgereusch7, R.raw.krankesgereusch8, R.raw.krankesgereusch9,
-    /*5*/                           R.raw.lache1, R.raw.lache2, R.raw.lache3,
-    /*5*/                           R.raw.maoam, R.raw.nailedit, R.raw.ohhswag, R.raw.ohtoll, R.raw.rhentier,
-    /*5*/                           R.raw.slenderman, R.raw.sovieledias, R.raw.weggeknallt, R.raw.woopwoop,
-                                    R.raw.fluelingslollen,R.raw.geilnew, R.raw.gemuesenew, R.raw.haahundnew, R.raw.haakatze,
-    /*5*/                           R.raw.hahahahahanew, R.raw.heulnew, R.raw.hildegartnew, R.raw.ichboxdichgleich, R.raw.ichjetztoderwer,
-    /*5*/                           R.raw.ichschwoernew, R.raw.lachenew, R.raw.likenew, R.raw.ohpferdnew, R.raw.okesorrynew,
-    /*5*/                           R.raw.vachinanew, R.raw.yeahwaahnew, R.raw.xaufgewachtwegenhunger, R.raw.xdreissigklikes, R.raw.xdrohnediemanfliegenkann,
-    /*5*/                           R.raw.xduegeilerhengst, R.raw.xhdf, R.raw.xhoertihrmirnichtzu,
-    /*5*/                           R.raw.xhuhomg, R.raw.xkanndasbeimirmalkommen, R.raw.xkloeten, R.raw.xlache, R.raw.xnamnamnam,
-    /*5*/                           R.raw.xnaseabbeissen, R.raw.xthatsamuelleimer, R.raw.xuarwasistdasdenn, R.raw.xunterwebertet, R.raw.xuoaaar
-
+    /*5*/                           R.raw.ahstimmt,R.raw.darfichjanicht, R.raw.dasistnichtwahr, R.raw.dasistnichtwahr1, R.raw.deristganzgeil,
+    /*5*/                           R.raw.diesekuh, R.raw.fressehalten, R.raw.freudichnichtso, R.raw.gibtndaumenrunter, R.raw.heiligescheisse,
+    /*5*/                           R.raw.heuteabendschonwasvor, R.raw.heysexy, R.raw.hochreden, R.raw.houston, R.raw.ichhabnkill,
+    /*5*/                           R.raw.ichsagnichts, R.raw.ichwill, R.raw.ichwillnichtmehr, R.raw.mussichdanochwassagen, R.raw.neinstop,
+    /*5*/                           R.raw.regdichnichtauf, R.raw.risikoeingehen, R.raw.schauteuchdasan, R.raw.schnautzehalten, R.raw.seidihrbescheuert,
+    /*2*/                           R.raw.tiefpunkt, R.raw.uebernachten,
+    /*5*/                           R.raw.verdammtescheisse, R.raw.versteheichnicht, R.raw.verstehtihr, R.raw.vollidiot, R.raw.wienice,
+    /*2*/                           R.raw.zweipaprika, R.raw.dafreustedichnew,R.raw.dubistekelhaftnew, R.raw.gibtmirnochmehrnew, R.raw.hatmichinteressiertnew, R.raw.ichbincoolnew,
+    /*5*/                           R.raw.ichbincoolundihrnichtnew, R.raw.ichbinhammernew, R.raw.mehrdaruebernew, R.raw.mussichdawaszusagennew, R.raw.prettydopehuh,
+    /*5*/                           R.raw.rollitnew, R.raw.sosympathischnew, R.raw.tieresindnurcoolnew, R.raw.verstehichnichtnew, R.raw.warumschicktmanmirsowasnew,
+    /*5*/                           R.raw.xbeimirwargarnichts, R.raw.xcoolfreutmich, R.raw.xdakannmanmalklatschebn, R.raw.xdasistsehrgeil, R.raw.xdasistsoschoen,
+    /*5*/                           R.raw.xdieserhass, R.raw.xesmachtkeinensinn, R.raw.xfahradfahren, R.raw.xichbinschlechtundscheisse, R.raw.xjoahartamarsch,
+    /*2*/                           R.raw.xpizzaessen, R.raw.xschoenetoilette,
+    /*5*/                           R.raw.xsicielgeldhabichnicht, R.raw.xtollereaktion, R.raw.xwaslaeuftfalsch, R.raw.xwhatareyoudoingman, R.raw.xwiedummkannmansein,
+    /*2*/                           R.raw.xwiegeilwardas, R.raw.xwiekanndassein, R.raw.xwuenderschoenerschaedel, R.raw.xyeahthatsdope
     };
+
+
+
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView=inflater.inflate(R.layout.lustiges,container,false);
+        View rootView=inflater.inflate(R.layout.sprueche,container,false);
 
-        layout=rootView.findViewById(R.id.lustiges);
+        layout=rootView.findViewById(R.id.sprueche);
         File storage = Environment.getExternalStorageDirectory();
         directory = new File(storage.getAbsolutePath() +"/"+R.string.foldername+"/");
 //        soundfile=new File(directory, filename);
 
-        myGridView = (GridView)rootView.findViewById(R.id.lustigesGridView);
-        myGridView.setAdapter(new Lustiges.CustomGridAdapter(getActivity(), items1));
+        myGridView = (GridView)rootView.findViewById(R.id.spruecheGridView);
+        myGridView.setAdapter(new Sprüche.CustomGridAdapter(getActivity(), items1));
         myGridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
@@ -112,7 +120,7 @@ public class Lustiges extends Fragment {
                             case 0:
                                 savefile(pos,true);
                                 Intent share = new Intent(Intent.ACTION_SEND);
-                                share.putExtra(Intent.EXTRA_STREAM, Uri.parse(Environment.getExternalStorageDirectory().toString()+"/"+R.string.foldername+"/"+ items1[position]+".mp3"));
+                                share.putExtra(Intent.EXTRA_STREAM, Uri.parse(Environment.getExternalStorageDirectory().toString() +"/"+R.string.foldername+"/"+ items1[position]+".mp3"));
                                 share.setType("audio/mp3");
                                 startActivity(Intent.createChooser(share, "Sound teilen über..."));
                                 break;
@@ -197,7 +205,7 @@ public class Lustiges extends Fragment {
                 public void onClick(View v) {
 
                         if (context instanceof MainActivity) {
-                            ((MainActivity) context).lustigesItemClicked(position);
+                            ((MainActivity) context).spruecheItemClicked(position);
                         }
 
                 }
@@ -411,4 +419,3 @@ public class Lustiges extends Fragment {
     }
 
 }
-

@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ConcrafterSoundboard.iml" filepath="$PROJECT_DIR$/.idea/ConcrafterSoundboard.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Concrafter_Pro.iml" filepath="$PROJECT_DIR$/Concrafter_Pro.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../PC Daten/PentaGames/Hochgeladene Apps/ConCrafter Premium/Concrafter_Pro/Freshtorge Soundboard.iml" filepath="$PROJECT_DIR$/../../PC Daten/PentaGames/Hochgeladene Apps/ConCrafter Premium/Concrafter_Pro/Freshtorge Soundboard.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../PC Daten/PentaGames/Hochgeladene Apps/ConCrafter Premium/Concrafter_Pro/FrestorgeProVersion.iml" filepath="$PROJECT_DIR$/../../PC Daten/PentaGames/Hochgeladene Apps/ConCrafter Premium/Concrafter_Pro/FrestorgeProVersion.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ConcrafterSoundboard.iml" filepath="$PROJECT_DIR$/ConcrafterSoundboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

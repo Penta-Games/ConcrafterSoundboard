@@ -1,4 +1,4 @@
-package com.penta.games.concraftersoundboardpro.tabs;
+package com.greenwoods.productions.concraftersoundboard.tabs;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -29,8 +29,8 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import com.penta.games.concraftersoundboardpro.MainActivity;
-import com.penta.games.concraftersoundboardpro.R;
+import com.greenwoods.productions.concraftersoundboard.MainActivity;
+import com.greenwoods.productions.concraftersoundboard.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -39,46 +39,47 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * Created by Oclemmy on 5/10/2016 for ProgrammingWizards Channel and http://www.Camposha.com.
+ * Created by Ratan on 7/29/2015.
  */
-public class Sprüche extends Fragment{
+public class Kommentare extends Fragment {
+
 
     GridView myGridView;
     int position;
     View layout;
-    //    File soundfile;
-    File directory;
-    String filename;
+//    File soundfile;
+File directory;
 
-    public String[] items1 ={"Ahhh stimmt", "Jo neee", "Das ist nicht wahr 1", "Das ist nicht wahr 2", "Ahh, ganz geil", "Diese Kuh..", "Bitte Fresse halten", "Freu dich nicht so", "Daumen Runter", "Heilige Schei*e",
-            "Heute abend schon was vor?", "Hey sexy Lady", "Halsschmerzen", "Houston", "Ich hab n Kill", "Ich sag dazu mal nichts", "Ich will", "Da will ich jetzt auch nicht mehr", "Muss ich dazu noch irgendwas sagen?",
-            "Nein Stop!", "Reg dich nicht auf Luca", "Risiko eingehen", "Schaut euch das an", "Haltet eure Schnauze", "Seid ihr bescheuert?", "Tiefpunkt erreicht", "Übernachten", "Verdammte Schei*e", "Ich versteh das nicht",
-            "Versteht ihr", "Vollidiot", "Wie nice", "2 Paprika",
-            "Da freuste dich nh", "Du bist ekelhaft", "Gib mir doch noch mehr", "Hat mich interessiert", "Ich bin cool", "Ich bin cool und ihr nicht", "Ich bin hammer",
-            "Kannste mir noch mehr erzählen?", "Muss ich da noch was zu sagen?", "Pretty dope huh", "Roll the outro", "Ich bin so sympathisch", "Sticker ausm Luca-Shop", "Versteh ich nicht",
-            "Warum schickt man mir sowas?", "Bei mir war garnichts", "Cool, freut mich", "Da kann man wirklich mal klatschen", "Das ist sehr geil", "Das ist so schön", "Dieser ganze Hass alter",
-            "Es macht einfach keinen sinn", "Ich kann nichtmal richtig Fahrradfahren", "Ich bin schlecht und Schei*e", "Schon hart am Arsch", "Wenn mir langweilig ist dann...", "Wunderschöne Toilette", "So viel Geld habe ich nicht",
-            "Tolle Reaktion, danke freunde", "Was läuft falsch in deinem Leben?", "What are you doing man?", "Wie dumm kann man sein?", "Wie geil war das bitte?", "Wie kann das sein?", "Wunderschöner Schädel", "Thats pretty dope"};
-
-
+    int max;
+    public String[] items1 ={
+            "Ah", "Aha", "Alles Klar 1", "Alles klar 2", "Ach als ob", "Ding Dong", "Doch", "Ehm", "Ehm ehh", "Oh Guten Tag",
+            "Hallo", "Halts Maul 1", "Halts Maul 2", "Halts Maul 3", "Hi :D", "Hm", "*Hust*", "Hioou", "Naaa", "Naguut",
+            "Neiiin", "Niiiice", "Ohh 1", "Ohh 2", "Oh nee", "Okay", "OMG 1", "OMG 2", "Prima", "Richtig",
+            "Schei*e", "Suuper", "Tadaa! 1", "Tadaa! 2", "WIESO", "Wooow",
+            "Ähh", "Ahh 1", "Ahh 2", "Cool 1", "Cool 2", "Danke",
+            "Das macht sinn", "Hää?", "Hi", "Ja", "Na", "Nein",
+            "Ouh", "Tschau", "Und ja", "Warum", "was", "wie",
+            "yey", "alter wie geil", "alter wtf", "bastard", "haeee", "Heiiiy",
+            "ist cool", "Ich hab keine Ahnung", "kleinscheiß", "Korrekt digga", "Total dumm eigentlich", "Ultra gut",
+            "Wooow", "wtf"};
 
     public static int[] soundfiles ={
-    /*5*/                           R.raw.ahstimmt,R.raw.darfichjanicht, R.raw.dasistnichtwahr, R.raw.dasistnichtwahr1, R.raw.deristganzgeil,
-    /*5*/                           R.raw.diesekuh, R.raw.fressehalten, R.raw.freudichnichtso, R.raw.gibtndaumenrunter, R.raw.heiligescheisse,
-    /*5*/                           R.raw.heuteabendschonwasvor, R.raw.heysexy, R.raw.hochreden, R.raw.houston, R.raw.ichhabnkill,
-    /*5*/                           R.raw.ichsagnichts, R.raw.ichwill, R.raw.ichwillnichtmehr, R.raw.mussichdanochwassagen, R.raw.neinstop,
-    /*5*/                           R.raw.regdichnichtauf, R.raw.risikoeingehen, R.raw.schauteuchdasan, R.raw.schnautzehalten, R.raw.seidihrbescheuert,
-    /*2*/                           R.raw.tiefpunkt, R.raw.uebernachten,
-    /*5*/                           R.raw.verdammtescheisse, R.raw.versteheichnicht, R.raw.verstehtihr, R.raw.vollidiot, R.raw.wienice,
-    /*2*/                           R.raw.zweipaprika, R.raw.dafreustedichnew,R.raw.dubistekelhaftnew, R.raw.gibtmirnochmehrnew, R.raw.hatmichinteressiertnew, R.raw.ichbincoolnew,
-    /*5*/                           R.raw.ichbincoolundihrnichtnew, R.raw.ichbinhammernew, R.raw.mehrdaruebernew, R.raw.mussichdawaszusagennew, R.raw.prettydopehuh,
-    /*5*/                           R.raw.rollitnew, R.raw.sosympathischnew, R.raw.tieresindnurcoolnew, R.raw.verstehichnichtnew, R.raw.warumschicktmanmirsowasnew,
-    /*5*/                           R.raw.xbeimirwargarnichts, R.raw.xcoolfreutmich, R.raw.xdakannmanmalklatschebn, R.raw.xdasistsehrgeil, R.raw.xdasistsoschoen,
-    /*5*/                           R.raw.xdieserhass, R.raw.xesmachtkeinensinn, R.raw.xfahradfahren, R.raw.xichbinschlechtundscheisse, R.raw.xjoahartamarsch,
-    /*2*/                           R.raw.xpizzaessen, R.raw.xschoenetoilette,
-    /*5*/                           R.raw.xsicielgeldhabichnicht, R.raw.xtollereaktion, R.raw.xwaslaeuftfalsch, R.raw.xwhatareyoudoingman, R.raw.xwiedummkannmansein,
-    /*2*/                           R.raw.xwiegeilwardas, R.raw.xwiekanndassein, R.raw.xwuenderschoenerschaedel, R.raw.xyeahthatsdope
-    };
+    /*5*/                           R.raw.ah,R.raw.aha, R.raw.alleskla, R.raw.allesklar, R.raw.alsob,
+    /*5*/                           R.raw.dingdong, R.raw.doch, R.raw.ehm, R.raw.ehmeh, R.raw.gutentag,
+    /*5*/                           R.raw.hallo, R.raw.haltsmaul, R.raw.haltsmaul1, R.raw.haltsmaul2, R.raw.hi,
+    /*5*/                           R.raw.hm, R.raw.hust, R.raw.jo, R.raw.naa, R.raw.nagut,
+    /*4*/                           R.raw.nein, R.raw.nice, R.raw.oh, R.raw.ohh,
+                                    R.raw.ohnee, R.raw.okay, R.raw.omg, R.raw.omg1, R.raw.prima,
+    /*4*/                           R.raw.richtig, R.raw.scheisse, R.raw.superr, R.raw.tada,
+                                    R.raw.tada1, R.raw.wieso, R.raw.wow, R.raw.aehnew,R.raw.ahhnew, R.raw.ahnew, R.raw.coolnew, R.raw.coolnew1,
+    /*5*/                           R.raw.dankenew, R.raw.dasmachtsinn, R.raw.heanew, R.raw.hinew, R.raw.janew,
+    /*5*/                           R.raw.nanew, R.raw.neinnew, R.raw.ouhnew, R.raw.tschaunew, R.raw.undjanew,
+    /*5*/                           R.raw.warumnew, R.raw.wasnew, R.raw.wienew, R.raw.yeynew, R.raw.xalterwiegeil,
+    /*4*/                           R.raw.xalterwtf, R.raw.xbastard, R.raw.xhaeeee, R.raw.xheiiiy,
+                                    R.raw.xistcool, R.raw.xkeineahnung, R.raw.xkleinscheiss, R.raw.xkorrektdiggah, R.raw.xtotaldumm,
+    /*4*/                           R.raw.xultragut, R.raw.xwow, R.raw.xwtf
+
+                                    };
 
 
 
@@ -87,15 +88,15 @@ public class Sprüche extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView=inflater.inflate(R.layout.sprueche,container,false);
+        View rootView=inflater.inflate(R.layout.kommentare,container,false);
 
-        layout=rootView.findViewById(R.id.sprueche);
+        layout=rootView.findViewById(R.id.kommentarelayout);
         File storage = Environment.getExternalStorageDirectory();
         directory = new File(storage.getAbsolutePath() +"/"+R.string.foldername+"/");
 //        soundfile=new File(directory, filename);
 
-        myGridView = (GridView)rootView.findViewById(R.id.spruecheGridView);
-        myGridView.setAdapter(new Sprüche.CustomGridAdapter(getActivity(), items1));
+        myGridView = (GridView)rootView.findViewById(R.id.kommentareGridView);
+        myGridView.setAdapter(new CustomGridAdapter(getActivity(), items1));
         myGridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
@@ -203,10 +204,10 @@ public class Sprüche extends Fragment{
 
                 @Override
                 public void onClick(View v) {
-
                         if (context instanceof MainActivity) {
-                            ((MainActivity) context).spruecheItemClicked(position);
+                            ((MainActivity) context).kommentareItemClicked(position);
                         }
+
 
                 }
             });
@@ -263,6 +264,7 @@ public class Sprüche extends Fragment{
             builder = new AlertDialog.Builder(getContext(), AlertDialog.THEME_HOLO_LIGHT);
 
         }
+
         builder.setItems(new CharSequence[]{"Klingelton", "Nachrichtenton", "Alarmton"}, new DialogInterface.OnClickListener(){
 
             @Override
@@ -321,6 +323,7 @@ public class Sprüche extends Fragment{
             if(MainActivity.isTesting){
                 Toast.makeText(getContext(),"Sound Saved", Toast.LENGTH_SHORT).show();
             }
+
             // Log the name of the sound that is being saved
             Log.e("Saving sound ","#############");
 
@@ -419,3 +422,4 @@ public class Sprüche extends Fragment{
     }
 
 }
+
