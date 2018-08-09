@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="10dp">
+
+
+
+    <item android:title="Sounds"
+        android:id="@+id/nav_item_inbox"
+        android:layout_marginTop="10dp"
+        android:icon="@drawable/soundicon" />
+
+    <item android:title="App teilen"
+        android:id="@+id/teilen"
+        android:layout_marginTop="10dp"
+        android:icon="@drawable/shareimg" />
+
+    <item android:title="Mehr von PentaGames">
+        <menu>
+
+            <item
+                android:id="@+id/elotrix"
+                android:icon="@drawable/elotrixicon"
+                android:title="ELoTRiX Soundboard" />
+            <item
+                android:id="@+id/gronkh"
+                android:icon="@drawable/gronkhicon"
+                android:title="Gronkh Soundboard" />
+            <item
+                android:id="@+id/tanzverbot"
+                android:icon="@drawable/tanzverboticon"
+                android:title="Tanzverbot Soundboard" />
+            <item
+                android:id="@+id/merkel"
+                android:icon="@drawable/angelaicon"
+                android:title="Angela Merkel Soundboard" />
+            <item
+                android:id="@+id/freshtorge"
+                android:icon="@drawable/freshtorgeicon"
+                android:title="Freshtorge Soundboard" />
+            <item
+                android:id="@+id/miimii"
+                android:icon="@drawable/miimiiicon"
+                android:title="Mii Mii Soundboard" />
+            <item
+                android:id="@+id/bauerhermann"
+                android:icon="@drawable/bauerhermann"
+                android:title="Bauer Hermann Soundboard" />
+            <item
+                android:id="@+id/bullshittv"
+                android:icon="@drawable/bullshittv"
+                android:title="Bullshit TV Soundboard" />
+            <item
+                android:id="@+id/crispyrob"
+                android:icon="@drawable/crispyrob"
+                android:title="CrispyRob Soundboard" />
+            <item
+                android:id="@+id/iblali"
+                android:icon="@drawable/iblali"
+                android:title="iBlali Soundboard" />
+            <item
+                android:id="@+id/julien"
+                android:icon="@drawable/julienicon"
+                android:title="Julien Bam Soundboard" />
+            <item
+                android:id="@+id/kuchentv"
+                android:icon="@drawable/kuchentv"
+                android:title="KuchenTV Soundboard" />
+            <item
+                android:id="@+id/simondesue"
+                android:icon="@drawable/simonicon"
+                android:title="Simon Desue Soundboard" />
+            <item
+                android:id="@+id/inscope"
+                android:icon="@drawable/inscope21"
+                android:title="Inscope21 Soundboard" />
+            <item
+                android:id="@+id/avive"
+                android:icon="@drawable/avive"
+                android:title="AviveHD Soundboard" />
+
+        </menu>
+    </item>
+
+
+    <item android:title="Kontakt">
+        <menu>
+            <item
+                android:id="@+id/instagram"
+                android:icon="@drawable/instaicon"
+                android:title="Instagram" />
+            <item
+                android:id="@+id/email"
+                android:icon="@drawable/emailicon"
+                android:title="E-Mail schreiben" />
+            <item
+                android:id="@+id/rechtliches"
+                android:icon="@drawable/gesetzt"
+                android:title="Rechtliches" />
+
+
+        </menu>
+    </item>
+
+</menu>

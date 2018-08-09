@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Concrafter Soundboard - Pro</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="foldername">concrafterpro</string>
+
+    <string name="msgForPremium">Hol dir die Premium Version um neue Sounds zu bekommen</string>
+
+    <string name="rechtliches"> <b>INFO:</b>\n
+ Das Soundboard wurde nicht von ConCrafter erstellt, sondern von Fans von ihm.\n
+Wir haben ohne Erfolg versucht ConCrafter zu erreichen, deshalb sind wir, falls er etwas gegen dieses Soundboard einzuwenden hat, jederzeit bereit es offline zu nehmen und stehen ihm bei Fragen, über Email, zur Verfügung.
+
+\n\n
+ <b>Impressum:</b>\nJakob Conda\nAaron Waller\n\npentagames.business@gmail.com</string>
+
+
+
+
+</resources>
